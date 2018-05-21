@@ -1,0 +1,7 @@
+image: /home/jan/mapas/int_amb.pgm
+resolution: 0.050000
+origin: [-23.400000, -12.200000, 0.000000]
+negate: 0
+occupied_thresh: 0.35
+free_thresh: 0.196
+

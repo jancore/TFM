@@ -1,0 +1,13 @@
+<launch>
+
+  	<include file="$(find turtlebot_bringup)/launch/minimal.launch" />
+	<include file="$(find kobuki_auto_docking)/launch/minimal.launch" />
+	<include file="$(find turtlebot_navigation)/launch/amcl_demo.launch" >
+	    	<arg name="map_file" default="$(env TURTLEBOT_MAP_FILE)"/>
+          	<node name="map_server" pkg="map_server" type="map_server" args="/home/turtlebot/catkin_ws/src/tfm/maps/int_amb2.yaml" />
+	</include>
+
+	<include file="$(find turtlebot_rviz_launchers)/launch/view_navigation.launch" />
+	<node pkg="tfm" name="tfm" type="nav_lab_v5"  output="screen" launch-prefix="xterm -e"/>
+
+</launch>
